@@ -1,26 +1,18 @@
 package conta;
 
 import java.util.Scanner;
-import conta.model.Conta;
-import conta.util.Cores;
+
 import conta.model.ContaCorrente;
 import conta.model.ContaPoupanca;
+import conta.util.Cores;
 
 public class Menu {
 
 	public static Scanner leia = new Scanner(System.in);
-
+	
 	public static void main(String[] args) {
 
 		int opcao;
-
-		// Teste da Classe Conta
-		Conta c1 = new Conta(3, 123, 1, "Mariana", 500000.0f);
-		c1.visualizar();
-		c1.sacar(12000.0f);
-		c1.visualizar();
-		c1.depositar(5000.0f);
-		c1.visualizar();
 
 		// Teste da Classe Conta Corrente
 		ContaCorrente cc1 = new ContaCorrente(1, 123, 1, "José da Silva", 0.0f, 1000.0f);
@@ -29,19 +21,18 @@ public class Menu {
 		cc1.visualizar();
 		cc1.depositar(5000.0f);
 		cc1.visualizar();
-
-		// Teste da Classe Conta Poupança
+		
+        // Teste da Classe Conta Poupança
 		ContaPoupanca cp1 = new ContaPoupanca(2, 123, 2, "Maria dos Santos", 100000.0f, 15);
 		cp1.visualizar();
-		cp1.sacar(1000.0f);
+        cp1.sacar(1000.0f);
 		cp1.visualizar();
 		cp1.depositar(5000.0f);
 		cp1.visualizar();
-
+		
 		while (true) {
-
-			System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND
-					+ "*****************************************************");
+			
+			System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND + "*****************************************************");
 			System.out.println("                                                     ");
 			System.out.println("                BANCO DO BRAZIL COM Z                ");
 			System.out.println("                                                     ");
@@ -56,56 +47,56 @@ public class Menu {
 			System.out.println("            7 - Depositar                            ");
 			System.out.println("            8 - Transferir valores entre Contas      ");
 			System.out.println("            9 - Sair                                 ");
-			System.out.println("                                                     ");
+			System.out.println("                                                     "); 
 			System.out.println("*****************************************************");
 			System.out.println("Entre com a opção desejada:                          ");
 			System.out.println("                                                     ");
 			opcao = leia.nextInt();
-
-			if (opcao == 9) {
+			
+			if(opcao == 9) {
 				System.out.println("\nBanco do Brazil com Z - O seu futuro começa aqui!");
 				leia.close();
 				System.exit(0);
 			}
-
-			switch (opcao) {
+			
+			switch(opcao) {
 			case 1:
 				System.out.println("\n Criar Conta");
-
-				break;
+				
+                 break;
 			case 2:
 				System.out.println("\n Listar todas as Contas");
-
-				break;
+				
+                 break;
 			case 3:
 				System.out.println("\n Buscar Conta por número");
-
+				
 				break;
 			case 4:
 				System.out.println("\n Atualizar dados da Conta");
-
-				break;
+				
+                 break;
 			case 5:
 				System.out.println("\n Apagar Conta");
-
-				break;
+				
+                 break;
 			case 6:
 				System.out.println("\n Sacar");
-
+				
 				break;
-			case 7:
+             case 7:
 				System.out.println("\n Depositar");
-
+				
 				break;
-			case 8:
+             case 8:
 				System.out.println("\n Transferir");
-
+				
 				break;
 			default:
 				System.out.println("\nOpção Inválida");
-				break;
+                 break;
 			}
-		}
+        }
 	}
 
 }
